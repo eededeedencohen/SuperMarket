@@ -1,0 +1,33 @@
+﻿<Application x:Class="PL.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PL"
+             xmlns:ViewModels="clr-namespace:PL.ViewModels"
+             xmlns:Views="clr-namespace:PL.Views"
+
+             StartupUri="Views/MainWindowView.xaml">
+    <Application.Resources>
+        <Style TargetType="{x:Type TextBox}" >
+            <Setter Property="Margin" Value="4"/>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}" >
+            <Setter Property="Margin" Value="4"/>
+        </Style>
+        <Style TargetType="{x:Type Button}" >
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="MinWidth" Value="100"/>
+        </Style>
+        <Style TargetType="{x:Type Image}" >
+            <Setter Property="Margin" Value="4"/>
+        </Style>
+        <DataTemplate DataType="{x:Type ViewModels:ProductViewModel }">
+            <Views:ProductView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModels:ShoppingRecommedationViewModel }">
+            <Views:ShoppingRecommendationView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModels:ShoppingDataViewModel }">
+            <Views:ShoppingDataView/>
+        </DataTemplate>
+    </Application.Resources>
+</Application>
